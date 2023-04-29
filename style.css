@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --text: white;
+    --background: rgb(19, 13, 20);
+}
+
+html {
+    font-family: "Montserrat", sans-serif;
+    color: var(--text);
+}
+
+body {
+    margin: 0;
+}
+
+#wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+}
+
+#wrapper hr {
+    color: var(--text);
+}
+
+#wrapper #top {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    text-align: center;
+    transform-style: preserve-3d;
+}
+
+#wrapper #top #bg {
+    height: 100vh;
+    width: 100vw;
+    z-index: -100;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateZ(-10px) scale(2);
+}
+
+#wrapper #top .fox {
+    position: absolute;
+    z-index: -50;
+    height: 20vh;
+    width: auto;
+    top: calc (50% - 10vh);    
+}
+
+#wrapper #top #fox-one {
+    left: 100%;
+    transform: translateZ(-7px) scale(1.7);
+}
+
+#wrapper #top #fox-two {
+    right: 100%;
+    transform: translateZ(-7px) scale(1.7);
+}
+
+#wrapper #content {
+    background-color: var(--background);
+    height: 100vh;
+    display: flex;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
