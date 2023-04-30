@@ -106,9 +106,9 @@ body {
     width: max-content;
     background: linear-gradient(0deg, var(--text), var(--text)) no-repeat right bottom / 0 var(--bg-h);
     transition: background-size 350ms;
-    --bg-h: 100%;
     border-radius: 0.2rem;
     padding: 0.2rem 0.3rem;
+    --bg-h: 100%;
 }
 
 #cards-container div:hover h3 {
@@ -173,11 +173,26 @@ footer a {
     text-decoration: none;
     width: max-content;
     padding-bottom: 0.1rem;
-    transition: all ease-in-out 0.2s;
+    position: relative;
+    padding-bottom: 0.1rem;
 }
 
-footer a:hover {
-    box-shadow: inset 0 -2px 0 0 var(--accent);
+footer a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-in-out;
+}
+
+footer a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 footer hr {
